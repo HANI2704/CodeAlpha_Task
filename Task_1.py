@@ -1,4 +1,3 @@
-
 import random
 
 List = ["google", "code", "template", "python", "task"]
@@ -13,18 +12,16 @@ print("_ " * len(word))
 
 while wrong_attempts < max_attempts:
     guess = input("Enter a letter: ").lower()
-    
-   
+
     guessed_letters.append(guess)
 
-   
     if guess in word:
         print("Good guess!")
     else:
         print("Wrong guess.")
         wrong_attempts += 1
 
-        display_word = ""
+    display_word = ""
     for letter in word:
         if letter in guessed_letters:
             display_word += letter + " "
@@ -34,7 +31,7 @@ while wrong_attempts < max_attempts:
     print(f"Wrong attempts: {wrong_attempts} / {max_attempts}\n")
 
     if all(letter in guessed_letters for letter in word):
-        print("🎉 Congratulations! You guessed the word:", word)
+        print("Congratulations! You guessed the word:", word)
         break
 else:
     print("Game Over! The word was:", word)
